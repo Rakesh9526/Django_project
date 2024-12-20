@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block title %}
+new customer
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="page-inner">
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">New Customers</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table
+                id="basic-datatables"
+                class="display table table-striped table-hover"
+              >
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact Number</th>
+                    <th>WhatsApp Number</th>
+                    <th>Reffered By</th>
+                  </tr>
+                  {% for d in customers %}
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{d.u_name}}</td>
+                    <td>{{d.u_address}}</td>
+                    <td>{{d.u_contact_number}}</td>
+                    <td>{{d.u_whatsapp_number}}</td>
+                    <td>{{d.u_reffered_by}}</td>
+                  </tr>
+                  {% endfor %}
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

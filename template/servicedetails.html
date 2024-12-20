@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% block title %}
+technicians
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container">
+  <div class="page-inner">
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">New Customers</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table
+                id="basic-datatables"
+                class="display table table-striped table-hover"
+              >
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact Number</th>
+                    <th>WhatsApp Number</th>
+                    <th>Reffered By</th>
+                  </tr>
+                  {% for d in details %}
+                </thead>
+                <tbody>
+                  <tr>
+                    <tr>
+                      <td>{{ d.name }}</td>
+                      <td>{{ d.item_name_or_number }}</td>
+                      <td>{{ d.issue }}</td>
+                      <td>{{ d.estimated_date }}</td>
+                      <td>
+                        <a class="btn btn-primary" href="{% url 'fuelcharge' %}">Updates</a> 
+                      </td>
+                  </tr>
+                  {% endfor %}
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}
+
+
+
+
+
+
